@@ -15,7 +15,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -35,12 +34,6 @@ public class LoginControllerServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         RequestDispatcher rd = null;
-        String logout = request.getParameter("logout");
-        if(logout != null){
-            HttpSession session = request.getSession();
-            session.invalidate();
-            response.sendRedirect("login.html");
-        }
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         IVDTO obj = new IVDTO();

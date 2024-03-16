@@ -52,8 +52,6 @@ public class ShowStudentDetailControllerServlet extends HttpServlet {
                 SimpleDateFormat formater = new SimpleDateFormat("dd-MM-yyyy");
                 Date date = new Date();
                 String subject = IVAppDAO.getSubjectByRoll_No(roll_no, formater.format(date));
-                System.out.println(formater.format(date));
-                System.out.println(subject);
                 if(subject.equals("no") == false)
                     session.setAttribute("subject", subject);
                 boolean isSubjectPresent = IVAppDAO.searchGivenSubject(roll_no, subject);
